@@ -6,17 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Lastly, change the text in box to say "It's so bright in here!" when it's on, and "Hey, who turned off the lights?" when it's off
 
+  // Start with small steps:
+
   // Change the status text when the document is ready
   var status = document.querySelector('.status');
+
   status.innerText = 'Document ready!'
 
   function changeStatusBack() {
     status.innerText = 'Anyway, bright enough for ya?!'
   };
-  setTimeout(changeStatusBack, 2000)
 
+  setTimeout(changeStatusBack, 1500)
 
   // Add a click listener to the switch and incorporate the changes listed above in 'Your Assignment'
+  var lightSwitch = document.querySelector('.plate');
+
+  function lightsOut(eventObject) {
+    window.alert('You flicked the switch!');
+  }
+
+  lightSwitch.addEventListener('click', lightsOut);
 
   // Confirm the switch works
 
